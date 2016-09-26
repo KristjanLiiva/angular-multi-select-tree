@@ -123,6 +123,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['jshint', 'karma:unit']);
   grunt.registerTask('test', ['karma:unit']);
   grunt.registerTask('test-server', ['karma:server']);
-  grunt.registerTask('server', ['open', 'connect:demo', 'watch']);
+  grunt.registerTask('serve', ['open', 'connect:demo', 'watch']);
   grunt.registerTask('build', ['clean', 'jshint', 'concat', 'ngtemplates', 'ngmin', 'cssmin', 'uglify']);
 };
