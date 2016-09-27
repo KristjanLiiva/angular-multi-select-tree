@@ -3,6 +3,9 @@ module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
   var _ = require('lodash');
+  var serveStatic = require('serve-static');
+  var serveIndex = require('serve-index');
+  var path = require('path');
 
   var karmaConfig = function(configFile, customOptions) {
     var options = { configFile: configFile, keepalive: true };
@@ -11,11 +14,12 @@ module.exports = function (grunt) {
   };
 
   var mountFolder = function (connect, dir) {
-    return connect.static(require('path').resolve(dir));
+    var _staticPath = path.resolve(dir);
+    return [serveStatic(_staticPath), serveIndex(_staticPath)];
   };
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('bower.json'),
+    pkg: grunt.file.readJSON('package.json'),
     meta: {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
