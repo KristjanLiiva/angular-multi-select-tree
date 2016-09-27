@@ -195,12 +195,55 @@
         if (isItemSelected(item)) {
           item.selected = false;
           $scope.selectedItems.splice(indexOfItem, 1);
+          unselectAllChildren(item);
         } else {
           $scope.selectedItems.push(item);
+          selectAllChildren(item);
         }
       }
       this.refreshOutputModel();
     };
+
+    var selectAllChildren = function myself(item) {
+      if(item.children) {
+        for(var i = 0; i< item.children.length; i++) {
+          var child = item.children[i];
+          if(!isItemSelected(child)) {
+            child.selected = true;
+            $scope.selectedItems.push(child);
+          }
+          myself(child);
+        }
+      }
+    };
+
+    var unselectAllChildren = function myself(item) {
+      if(item.children) {
+        for(var i = 0; i< item.children.length; i++) {
+          var child = item.children[i];
+          if(isItemSelected(child)) {
+            child.selected = false;
+            var indexOfItem = $scope.selectedItems.indexOf(child);
+            $scope.selectedItems.splice(indexOfItem, 1);
+          }
+          myself(child);
+        }
+      }
+    };
+
+    // var anyChildSelected = function myself(item) {
+    //   if(item.children) {
+    //     for(var i = 0; i< item.children.length; i++) {
+    //       var child = item.children[i];
+    //       var result = child.selected || myself(child);
+    //       return result;
+    //     }
+    //   } else {
+    //     return false;
+    //   }
+    // };
+
+    typeof myself === 'undefined'
 
   }]);
 
