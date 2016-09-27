@@ -16,42 +16,26 @@
 <body ng-controller="demoAppCtrl">
 
 <header>
-    <h1 class="text-center">Demo Page for the Angular Multi Select Tree...</h1>
+    <h1 class="text-center">Angular Multi Select Tree</h1>
 </header>
 
 <div>
   <div class="container">
+    <h4 style="margin-top: 32px;">With selection showing</h4>
+    <multi-select-tree data-input-model="data" multi-select="true"
+                       data-output-model="selectedItem" data-default-label="Nothing selected"
+                       data-callback="selectOnly1Or2(item, selectedItems)"
+                       data-select-only-leafs="false"
+                       data-switch-view-label="test1" data-switch-view="true"></multi-select-tree>
+    <br/>Selected items: {{selectedItem}}
 
-    <div class="row">
-      <h2>Multi-select</h2>
-
-      <div class="col-md-6">
-        <p>With selection showing</p>
-        <multi-select-tree data-input-model="data" multi-select="true"
-                           data-output-model="selectedItem" data-default-label="Nothing selected"
-                           data-callback="selectOnly1Or2(item, selectedItems)"
-                           data-select-only-leafs="false"
-                           data-switch-view-label="test1" data-switch-view="true"></multi-select-tree>
-        <br/>Selected items: {{selectedItem}}
-
-        <hr />
-        <p>Without selection showing</p>
-        <multi-select-tree data-input-model="data1" multi-select="true"
-                           data-output-model="selectedItem1" data-default-label="Nothing selected"
-                           data-callback="selectOnly1Or1(item, selectedItems)"
-                           data-select-only-leafs="false"></multi-select-tree>
-        <br/>Selected items: {{selectedItem1}}
-
-        <hr />
-        <p>Only leafs are selectable</p>
-        <multi-select-tree data-input-model="data2" multi-select="true"
-                           data-output-model="selectedItem2" data-default-label="Nothing selected"
-                           data-callback="selectOnly1Or2(item, selectedItems)"
-                           data-select-only-leafs="true"></multi-select-tree>
-        <br/>Selected items: {{selectedItem2}}
-      </div>
-
-    </div>
+    <hr />
+    <h4 style="margin-top: 64px;">Only leafs are selectable</h4>
+    <multi-select-tree data-input-model="data2" multi-select="true"
+                       data-output-model="selectedItem2" data-default-label="Nothing selected"
+                       data-callback="selectOnly1Or2(item, selectedItems)"
+                       data-select-only-leafs="true"></multi-select-tree>
+    <br/>Selected items: {{selectedItem2}}
   </div>
 </div>
 </body>

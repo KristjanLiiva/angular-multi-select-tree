@@ -92,18 +92,19 @@
      * @returns {*}
      */
     $scope.showCheckbox = function () {
-      return true;
       // if (!$scope.multiSelect) {
       //   return false;
       // }
 
-      // if ($scope.selectOnlyLeafs) {
-      //   return false;
-      // }
+      if ($scope.selectOnlyLeafs) {
+        return false;
+      }
 
       // if ($scope.useCallback) {
       //   return $scope.canSelectItem($scope.item);
       // }
+      
+      return true;
     };
 
   }]);
