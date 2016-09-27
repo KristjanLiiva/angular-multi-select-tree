@@ -4,18 +4,26 @@
       <span ng-if="selectedItems.length == 0" class="selected-items">
         <span ng-bind="defaultLabel"></span>
       </span>
-      <span ng-if="selectedItems.length > 0" class="selected-items">
-        <span ng-repeat="selectedItem in selectedItems" class="selected-item">{{selectedItem.name}} <span class="selected-item-close" ng-click="deselectItem(selectedItem, $event)"></span></span>
-          <span class="caret"></span>
+
+      <span ng-if="selectedItems.length > 0 && selectedItems.length <= 2" class="selected-items">
+        <span ng-repeat="selectedItem in selectedItems" class="selected-item">
+          <span ng-bind="selectedItem.name"></span>
+          <span class="selected-item-close" ng-click="deselectItem(selectedItem, $event)"></span>
+        </span>
+        <span class="caret"></span>
       </span>
+
+      <span ng-if="selectedItems.length > 2" class="selected-items">Multiple selected</span>
           <!-- <input type="text" class="blend-in" /> -->
     </div>
+
     <div class="tree-view" ng-show="showTree">
         <div class="helper-container">
             <div class="line">
-                <input placeholder="Search..." type="text" ng-model="filterKeyword" ng-click="onFilterClicked($event)"
-                       class="input-filter">
-                <span class="clear-button" ng-click="clearFilter($event)"><span class="item-close"></span></span>
+                <input placeholder="Search..." type="text" ng-model="filterKeyword" ng-click="onFilterClicked($event)" class="input-filter">
+                <span class="clear-button" ng-click="clearFilter($event)">
+                  <span class="item-close"></span>
+                </span>
             </div>
         </div>
         <ul class="tree-container">

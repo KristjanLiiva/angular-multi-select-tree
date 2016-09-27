@@ -28,7 +28,7 @@
       <div class="col-md-6">
         <p>With selection showing</p>
         <multi-select-tree data-input-model="data" multi-select="true"
-                           data-output-model="selectedItem" data-default-label="Click here to Select..."
+                           data-output-model="selectedItem" data-default-label="Nothing selected"
                            data-callback="selectOnly1Or2(item, selectedItems)"
                            data-select-only-leafs="false"
                            data-switch-view-label="test1" data-switch-view="true"></multi-select-tree>
@@ -37,7 +37,7 @@
         <hr />
         <p>Without selection showing</p>
         <multi-select-tree data-input-model="data1" multi-select="true"
-                           data-output-model="selectedItem1" data-default-label="Click here to Select..."
+                           data-output-model="selectedItem1" data-default-label="Nothing selected"
                            data-callback="selectOnly1Or1(item, selectedItems)"
                            data-select-only-leafs="false"></multi-select-tree>
         <br/>Selected items: {{selectedItem1}}
@@ -45,7 +45,7 @@
         <hr />
         <p>Only leafs are selectable</p>
         <multi-select-tree data-input-model="data2" multi-select="true"
-                           data-output-model="selectedItem2" data-default-label="Click here to Select..."
+                           data-output-model="selectedItem2" data-default-label="Nothing selected"
                            data-callback="selectOnly1Or2(item, selectedItems)"
                            data-select-only-leafs="true"></multi-select-tree>
         <br/>Selected items: {{selectedItem2}}
