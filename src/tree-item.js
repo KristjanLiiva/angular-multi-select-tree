@@ -92,17 +92,18 @@
      * @returns {*}
      */
     $scope.showCheckbox = function () {
-      if (!$scope.multiSelect) {
-        return false;
-      }
+      return true;
+      // if (!$scope.multiSelect) {
+      //   return false;
+      // }
 
-      if ($scope.selectOnlyLeafs) {
-        return false;
-      }
+      // if ($scope.selectOnlyLeafs) {
+      //   return false;
+      // }
 
-      if ($scope.useCallback) {
-        return $scope.canSelectItem($scope.item);
-      }
+      // if ($scope.useCallback) {
+      //   return $scope.canSelectItem($scope.item);
+      // }
     };
 
   }]);

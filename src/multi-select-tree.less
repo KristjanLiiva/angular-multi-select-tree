@@ -76,13 +76,17 @@
 .tree-control .tree-view ul {
   padding: 0;
   margin: 0;
+  margin-left: 16px;
 }
 .tree-control .tree-view ul .item-details {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
   margin-left: 5px;
+  padding: 5px 0;
 }
 .tree-control .tree-view ul .tree-checkbox {
-  margin-right: 3px;
+  margin-right: 5px;
   margin-top: 0;
   color: #ddd !important;
   cursor: pointer;
@@ -104,9 +108,11 @@
 /* container of multi select items */
 .tree-control .tree-view .tree-container {
   padding: 8px;
+  margin-left: 0;
 }
 
 .tree-control .tree-view .item-container {
+  display: flex;
   padding: 3px;
   color: #444;
   white-space: nowrap;
@@ -121,14 +127,14 @@
 
 /* item labels focus on mouse hover */
 .tree-control .tree-view .item-container:hover {
-  background-image: linear-gradient( #c1c1c1, #999 ) !important;
+  background: gray;
   color: #fff !important;
   cursor: pointer;
   border: 1px solid #ccc !important;
 }
 
 .tree-control .tree-view .selected {
-  background-image: linear-gradient( #e9e9e9, #f1f1f1 );
+  background: gray;
   color: #555;
   cursor: pointer;
   border-top: 1px solid #e4e4e4;
@@ -221,7 +227,7 @@
 
 .tree-control .tree-view li {
   list-style-type: none;
-  margin-left: 15px;
+  padding: 4px 0;
 }
 
 .tree-control .tree-view li .expand {
@@ -238,6 +244,11 @@
   border-right: 6px solid transparent;
   border-top: 10px solid #525252;
 }
+
 .tree-control .tree-view li.top-level {
   margin: 0;
+}
+
+tree-item.child {
+  margin-left: 15px;
 }

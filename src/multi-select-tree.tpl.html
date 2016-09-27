@@ -5,8 +5,7 @@
       <span ng-bind="defaultLabel"></span>
     </span>
     <span ng-if="selectedItems.length > 0" class="selected-items">
-      <span ng-repeat="selectedItem in selectedItems" class="selected-item">{{selectedItem.name}} <span class="selected-item-close"
-                                                                                  ng-click="deselectItem(selectedItem, $event)"></span></span>
+      <span ng-repeat="selectedItem in selectedItems" class="selected-item">{{selectedItem.name}} <span class="selected-item-close" ng-click="deselectItem(selectedItem, $event)"></span></span>
         <span class="caret"></span>
     </span>
         <!-- <input type="text" class="blend-in" /> -->

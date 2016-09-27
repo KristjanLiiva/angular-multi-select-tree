@@ -36,6 +36,8 @@ app.controller('demoAppCtrl', function ($scope) {
   });
 
   $scope.data = angular.copy(data1);
+  $scope.data1 = angular.copy(data1);
+  $scope.data2 = angular.copy(data1);
 
   var data3 = [];
 

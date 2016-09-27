@@ -29,8 +29,8 @@ module.exports = function (grunt) {
     },
     watch: {
       scripts: {
-        files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
-        tasks: ['jshint', 'karma:unit']
+        files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', 'src/**/*.html', 'src/**/*.less', 'demo/**/*.html', 'demo/**/*.js'],
+        tasks: ['update-dist']
       }
     },
     jshint: {
@@ -127,6 +127,8 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['jshint', 'karma:unit']);
   grunt.registerTask('test', ['karma:unit']);
   grunt.registerTask('test-server', ['karma:server']);
+  grunt.registerTask('update-dist', ['clean', 'concat', 'ngtemplates']);
   grunt.registerTask('serve', ['open', 'connect:demo', 'watch']);
   grunt.registerTask('build', ['clean', 'jshint', 'concat', 'ngtemplates', 'ngmin', 'cssmin', 'uglify']);
+
 };

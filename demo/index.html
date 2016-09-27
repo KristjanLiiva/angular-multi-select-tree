@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>AngularJS Demo UI Component</title>
+    <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="../dist/angular-multi-select-tree-0.1.0.css">
@@ -19,22 +20,37 @@
 </header>
 
 <div>
-    <div class="container">
+  <div class="container">
 
-        <div class="row">
-            <h2>Multi-select</h2>
+    <div class="row">
+      <h2>Multi-select</h2>
 
-            <div class="col-md-6">
-                <multi-select-tree data-input-model="data" multi-select="true"
-                                   data-output-model="selectedItem2" data-default-label="Click here to Select..."
-                                   data-callback="selectOnly1Or2(item, selectedItems)"
-                                   data-select-only-leafs="true" data-switch-view-callback="switchViewCallback(scopeObj)"
-                                   data-switch-view-label="test1" data-switch-view="true"></multi-select-tree>
-                <br/>Selected items: {{selectedItem2}}
-            </div>
+      <div class="col-md-6">
+        <p>With selection showing</p>
+        <multi-select-tree data-input-model="data" multi-select="true"
+                           data-output-model="selectedItem" data-default-label="Click here to Select..."
+                           data-callback="selectOnly1Or2(item, selectedItems)"
+                           data-select-only-leafs="false" data-switch-view-callback="switchViewCallback(scopeObj)"
+                           data-switch-view-label="test1" data-switch-view="true"></multi-select-tree>
+        <br/>Selected items: {{selectedItem}}
 
-        </div>
+        <p>Without selection showing</p>
+        <multi-select-tree data-input-model="data1" multi-select="true"
+                           data-output-model="selectedItem1" data-default-label="Click here to Select..."
+                           data-callback="selectOnly1Or1(item, selectedItems)"
+                           data-select-only-leafs="false" data-switch-view-callback="switchViewCallback(scopeObj)"></multi-select-tree>
+        <br/>Selected items: {{selectedItem1}}
+
+        <p>Only leafs are selectable</p>
+        <multi-select-tree data-input-model="data2" multi-select="true"
+                           data-output-model="selectedItem2" data-default-label="Click here to Select..."
+                           data-callback="selectOnly1Or2(item, selectedItems)"
+                           data-select-only-leafs="true" data-switch-view-callback="switchViewCallback(scopeObj)"></multi-select-tree>
+        <br/>Selected items: {{selectedItem2}}
+      </div>
+
     </div>
+  </div>
 </div>
 </body>
 </html>
