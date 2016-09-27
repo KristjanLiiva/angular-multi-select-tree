@@ -301,12 +301,15 @@
            * Return all childNodes of a given node (as Array of Nodes)
            */
           function getAllChildNodesFromNode(node, childNodes) {
+            if(!node.children) return [];
+
             for (var i = 0; i < node.children.length; i++) {
               childNodes.push(node.children[i]);
               // add the childNodes from the children if available
               getAllChildNodesFromNode(node.children[i], childNodes);
             }
             return childNodes;
+
           }
 
           scope.$watch('filterKeyword', function () {
