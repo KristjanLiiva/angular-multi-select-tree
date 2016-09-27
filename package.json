@@ -13,6 +13,8 @@
     "type": "git",
     "url": "https://github.com/KristjanLiiva/angular-multi-select-tree"
   },
+  "main": "dist/angular-multi-select-tree.js",
+  "style": "dist/angular-multi-select-tree.css",
   "keywords": [
     "tree",
     "control",
@@ -22,7 +24,7 @@
     "angualr",
     "angularjs"
   ],
-  "author": "Muhammed Ashik",
+  "author": "Kristjan Liiva, Muhammed Ashik",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/KristjanLiiva/angular-multi-select-tree"

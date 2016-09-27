@@ -44,25 +44,24 @@ module.exports = function (grunt) {
     },
     concat: {
       js: {
-        src: ['src/**/*main.js',
-              'src/**/*.js'],
-        dest: 'dist/angular-multi-select-tree-<%= pkg.version %>.js'
+        src: ['src/**/*.js', '.tmp/**/*.js'],
+        dest: 'dist/angular-multi-select-tree.js'
       },
       css: {
         src: ['src/**/*.css', 'src/**/*.less'],
-        dest: 'dist/angular-multi-select-tree-<%= pkg.version %>.css'
+        dest: 'dist/angular-multi-select-tree.css'
       }
     },
     ngtemplates: {
       'multi-select-tree': {
         src: 'src/**/*.html',
-        dest: 'dist/angular-multi-select-tree-<%= pkg.version %>.tpl.js'
+        dest: '.tmp/angular-multi-select-tree.tpl.js'
       }
     },
     uglify: {
       src: {
         files: {
-          'dist/angular-multi-select-tree-<%= pkg.version %>.min.js': '<%= concat.js.dest %>'
+          'dist/angular-multi-select-tree.min.js': '<%= concat.js.dest %>'
         }
       }
     },

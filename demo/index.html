@@ -1,42 +1,43 @@
 <!doctype html>
 <html lang="en" ng-app="demoApp">
 <head>
-    <meta charset="utf-8">
-    <title>AngularJS Demo UI Component</title>
-    <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <title>AngularJS Demo UI Component</title>
+  <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../dist/angular-multi-select-tree-0.1.0.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="../dist/angular-multi-select-tree.css">
 
-    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="../dist/angular-multi-select-tree-0.1.0.js"></script>
-    <script type="text/javascript" src="../dist/angular-multi-select-tree-0.1.0.tpl.js"></script>
+  <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+  <script type="text/javascript" src="../dist/angular-multi-select-tree.js"></script>
 </head>
+
 <body ng-controller="demoAppCtrl">
 
-<header>
+  <header>
     <h1 class="text-center">Angular Multi Select Tree</h1>
-</header>
+  </header>
 
-<div>
-  <div class="container">
-    <h4 style="margin-top: 32px;">With selection showing</h4>
-    <multi-select-tree data-input-model="data" multi-select="true"
-                       data-output-model="selectedItem" data-default-label="Nothing selected"
-                       data-callback="selectOnly1Or2(item, selectedItems)"
-                       data-select-only-leafs="false"
-                       data-switch-view-label="test1" data-switch-view="true"></multi-select-tree>
-    <br/>Selected items: {{selectedItem}}
+  <div>
+    <div class="container">
+      <h4 style="margin-top: 32px;">With selection showing</h4>
+      <multi-select-tree data-input-model="data" multi-select="true"
+                         data-output-model="selectedItem" data-default-label="Nothing selected"
+                         data-callback="selectOnly1Or2(item, selectedItems)"
+                         data-select-only-leafs="false"
+                         data-switch-view-label="test1" data-switch-view="true"></multi-select-tree>
+      <br/>Selected items: {{selectedItem}}
 
-    <hr />
-    <h4 style="margin-top: 64px;">Only leafs are selectable</h4>
-    <multi-select-tree data-input-model="data2" multi-select="true"
-                       data-output-model="selectedItem2" data-default-label="Nothing selected"
-                       data-callback="selectOnly1Or2(item, selectedItems)"
-                       data-select-only-leafs="true"></multi-select-tree>
-    <br/>Selected items: {{selectedItem2}}
+      <hr />
+      <h4 style="margin-top: 64px;">Only leafs are selectable</h4>
+      <multi-select-tree data-input-model="data2" multi-select="true"
+                         data-output-model="selectedItem2" data-default-label="Nothing selected"
+                         data-callback="selectOnly1Or2(item, selectedItems)"
+                         data-select-only-leafs="true"></multi-select-tree>
+      <br/>Selected items: {{selectedItem2}}
+    </div>
   </div>
-</div>
+
+  <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
