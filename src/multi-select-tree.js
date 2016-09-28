@@ -243,7 +243,7 @@
     //   }
     // };
 
-    typeof myself === 'undefined'
+    // typeof myself === 'undefined'
 
   }]);
 

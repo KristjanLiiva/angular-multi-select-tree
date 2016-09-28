@@ -1,12 +1,13 @@
 {
   "name": "angular-multi-select-tree",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A hierarchical (or tree) selection control for AngularJS",
   "scripts": {
     "default": "grunt default",
     "test": "grunt test",
     "test-server": "grunt test-server",
-    "serve": "grunt serve",
+    "server": "grunt server",
+    "dev": "grunt dev",
     "build": "grunt build"
   },
   "repository": {

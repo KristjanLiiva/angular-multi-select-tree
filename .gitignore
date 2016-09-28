@@ -4,3 +4,4 @@ components
 build
 .idea
 .editorconfig
+.tmp

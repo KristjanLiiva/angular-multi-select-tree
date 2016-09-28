@@ -117,17 +117,18 @@ module.exports = function (grunt) {
     cssmin: {
         css: {
           src: '<%= concat.css.dest %>',
-          dest: 'dist/angular-multi-select-tree-<%= pkg.version %>.min.css'
+          dest: 'dist/angular-multi-select-tree.min.css'
         }
     },
     clean: ['dist/*']
   });
 
-  grunt.registerTask('default', ['jshint', 'karma:unit']);
+  grunt.registerTask('default', ['dev']);
   grunt.registerTask('test', ['karma:unit']);
   grunt.registerTask('test-server', ['karma:server']);
   grunt.registerTask('update-dist', ['clean', 'concat', 'ngtemplates']);
-  grunt.registerTask('serve', ['open', 'connect:demo', 'watch']);
+  grunt.registerTask('server', ['open', 'connect:demo', 'watch']);
+  grunt.registerTask('dev', ['update-dist', 'server']);
   grunt.registerTask('build', ['clean', 'jshint', 'concat', 'ngtemplates', 'ngmin', 'cssmin', 'uglify']);
 
 };
